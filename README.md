@@ -23,3 +23,4 @@ Simple DNS server to retry/forwarder
 3) **node server.js**
 
 4) console log 
+![alt text](https://github.com/evertonbtm/nodeDnsRetryForwarder/blob/master/images/sample-console.png?raw=true)
