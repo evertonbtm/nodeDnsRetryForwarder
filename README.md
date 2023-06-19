@@ -1,6 +1,6 @@
 # nodeDnsRetryForwarder
 
-Simple DNS server to retry/forwarder
+Simple DNS server to retry/forwarder only on fails.
 
 # start
 
