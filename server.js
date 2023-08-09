@@ -4,7 +4,7 @@ var dns = require('native-dns');
 var util = require('util');
 var propertiesReader = require('properties-reader');
 
-var server = named.createServer();;
+const server = named.createServer();
 var port;
 var redirectToIP;
 var redirectToPort;
@@ -15,8 +15,6 @@ var customRedirectToIP;
 
 var ttlTime;
 var requestTimeout;
-
-init();
 
 function init(){
 		let properties = propertiesReader('config.properties');
@@ -51,15 +49,17 @@ function init(){
 			console.log('Please fill redirectToPort on config.properties');
 			process.exit(1);
 		}
-		if(customForward && !customRedirectToIP){
+
+		if((customForward?.length > 1)&& !customRedirectToIP){
 			console.log('Please fill customRedirectToIP on config.properties');
 			process.exit(1);
 		}
-		
 }
 
+init();
+
 // Listen on TCP
-server.listenTcp({ port: port, address: '::' });
+server.listenTcp({ 'port': port, 'address': '::' });
 
 // Listen on UDP
 server.listen(port, '::', function() {  
